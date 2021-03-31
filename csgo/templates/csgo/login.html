@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+</head>
+<body>
+    <div class="div-form">
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <table>{{ form }}</table>
+            <input class="atuin-btn" type="submit" value="Sign Up"/>
+        </form>
+    </div>
+    <a href="{% url 'signup' %}">Sign Up</a>
+</body>
+</html>

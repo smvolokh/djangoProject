@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/hello.css">
+</head>
+<body style="background-image: url({% static 'img/hello.jpg' %}); background-size: cover">
+    <div style="position: absolute; top:30%; left: 35%; width: 600px; height: 300px; background-color: #DCDCDC; margin-top: -15px;">
+        {% if name %}
+            <div class="three"><h1>Hello, {{ name }}!</h1></div>
+        {% else %}
+            <a href="login">Login</a>
+        {% endif %}
+
+        <a style="position: absolute; left: 35%; top: 65%" href="../rifles" class="gradient-button">Rifles</a>
+    </div>
+</body>
+</html>
+

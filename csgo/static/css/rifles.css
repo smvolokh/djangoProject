@@ -1,0 +1,153 @@
+.rounded {
+counter-reset: li;
+list-style: none;
+font: 20px "Trebuchet MS", "Lucida Sans";
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+width: 450px;
+height: 800px;
+position: absolute;
+left: 38%;
+top: 15%;
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #DAD2CA;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #8FD4C1;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+
+.three {
+  padding: 50px 20px;
+  text-align: center;
+}
+.three h1 {
+  font-family: 'Merriweather', serif;
+  position: relative;
+  color: black;
+  background: #48D1CC;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 15px 60px;
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}
+.three h1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -15px;
+  background: #48D1CC;
+}
+.three h1:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 80%;
+  border-top: 10px solid #48D1CC;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -25px;
+}
+@media (max-width: 500px) {
+  .three h1 {font-size: 1.8em;}
+}
+@media (max-width: 400px) {
+  .three h1 {
+    font-size: 1.5em;
+    padding: 10px 30px;
+  }
+}
+
+.tooltip span{
+    border-radius: 5px 5px 5px 5px;
+    visibility: hidden;
+    position: absolute;
+    left: 200px;
+    box-shadow: -2px 2px 10px -1px #333;
+    border-radius: 5px;
+    z-index: 99999
+}
+
+.tooltip:hover span{
+visibility: visible;
+}
+
+.add_skin {
+        position: fixed; top: 10%; left: 10%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 32px;
+        font-weight: bold;
+        color: #4169E1;
+}
+.atuin-btn {
+    display: absolute;
+    margin: 10px;
+    text-decoration: none;
+    border: 2px solid #BFE2FF;
+    position: fixed; top: 105%; left: 15%;
+    overflow: hidden;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+    background: #337AB7;
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+    text-align: left
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+    color: #FFF;
+}
+.atuin-btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, rgba(191, 226, 255, 0.3), transparent);
+    transition: left 0.7s;
+}
+.atuin-btn:hover:before,
+.atuin-btn:active:before,
+.atuin-btn:focus:before {
+    left: 100%;
+}

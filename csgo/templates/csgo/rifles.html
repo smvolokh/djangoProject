@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/rifles.css">
+</head>
+<body style="background-image: url({% static 'img/types_rifles.jpg' %}); background-size: cover">
+    <div class="three"><h1>Skins for {{ title }}</h1></div>
+    <form class="add_skin" action="{% url 'rifle_by_name' title %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="skin" maxlength="20" size="30" placeholder="Enter skin name" value = "{{ skin }}"/>
+        <br/>
+        {% if skin_error %}
+            <p style="color: #FF4500; font-weight: bold; font-size: 24px; text-align: center; margin: 0px; padding: 0px;">{{ skin_error }}</p>
+        {% endif %}
+        <input type="text" name="text" maxlength="4096" size="30" placeholder="Enter skin description" value="{{ text }}"/>
+        <br/>
+        {% if text_error %}
+            <p style="color: #FF4500; font-weight: bold; font-size: 24px; text-align: center; margin: 0px; padding: 0px;">{{ text_error }}</p>
+        {% endif %}
+        <input class="atuin-btn" type = "submit" value = "Add skin" />
+    </form>
+    <ol class="rounded">
+        {% for skin in skins %}
+            <li><a class="tooltip" href="#">{{ skin.subject }}<span><img src="{% static 'img/'|add:skin.subject|add:'.jpg' %}"></span></a></li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

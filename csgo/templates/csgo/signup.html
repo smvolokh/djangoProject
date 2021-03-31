@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href = '/static/css/signup.css'>
+</head>
+<body style="background-image: url({% static 'img/signup.jpg' %}); background-size: cover">
+    <div class="div-form">
+        <h1>Complete registration</h1>
+        <form method="POST" class="form">
+        {% csrf_token %}
+        <table>{{ form }}</table>
+        <input class="gradient-button" type="submit" value="Sign Up"/>
+    </form>
+    </div>
+</body>
+</html>

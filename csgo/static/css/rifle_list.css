@@ -1,0 +1,109 @@
+.rounded {
+counter-reset: li;
+list-style: none;
+font: 20px "Trebuchet MS", "Lucida Sans";
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+width: 450px;
+height: 700px;
+position: absolute;
+left: 38%;
+top: 15%;
+}
+.rounded a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #DAD2CA;
+color: #444;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background: #8FD4C1;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+
+.three {
+  padding: 50px 20px;
+  text-align: center;
+}
+.three h1 {
+  font-family: 'Merriweather', serif;
+  position: relative;
+  color: black;
+  background: #48D1CC;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 15px 60px;
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+}
+.three h1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -15px;
+  background: #48D1CC;
+}
+.three h1:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 80%;
+  border-top: 10px solid #48D1CC;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -25px;
+}
+@media (max-width: 500px) {
+  .three h1 {font-size: 1.8em;}
+}
+@media (max-width: 400px) {
+  .three h1 {
+    font-size: 1.5em;
+    padding: 10px 30px;
+  }
+}
+.gradient-button {
+  position: absolute;
+  top:-1%;
+  left:-1%;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
